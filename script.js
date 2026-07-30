@@ -24,10 +24,25 @@ $(window).on('load', function() {
 // CONTROLE DE CENAS COM TURN.JS
 // =========================================
 function iniciarMusica() {
-    audioFundo.play();
-    document.getElementById('btn-play').innerText = "⏸️";
+    // 1. Força o navegador a carregar o áudio DENTRO da ação de clique do usuário.
+    // Isso burla os bloqueios de segurança do iOS, Safari e Chrome.
+    audioFundo.load(); 
     
-    // Libera a interação e vira a página
+    // 2. Tenta tocar a música e captura qualquer erro sem quebrar o resto do site
+    let playPromise = audioFundo.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            // Se o áudio tocar com sucesso, muda o botão para pause
+            document.getElementById('btn-play').innerText = "⏸️";
+        }).catch(error => {
+            console.log("O navegador bloqueou o áudio temporariamente:", error);
+            // Se der erro de política do navegador, mantém o ícone de play
+            document.getElementById('btn-play').innerText = "▶️";
+        });
+    }
+
+    // 3. Libera a interação e vira a página normalmente
     $('#flipbook').turn("disable", false);
     $('#flipbook').turn("next");
     $('#flipbook').turn("disable", true); // Trava na nova cena
