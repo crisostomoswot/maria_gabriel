@@ -213,11 +213,19 @@ const listaDePremios = [
     "🎟️ Vale um cheiro bem gostoso no pescoço!",
     "🎟️ Vale uma piada bem engraçada!",
     "🎟️ Vale eu te amando pra sempre!!",
-    "🎟️ Vale um dia de estudos juntos!👎👎👎"
+    "🎟️ Vale um dia de estudos juntos! 👎👎"
 
 ];
 
+const audioSorteio = new Audio('assets/plim.mp3');
+audioSorteio.volume = 1; // Ajuste o volume se precisar
+
+// 2. Atualize a função que já existe no seu código
 function sortearPremio() {
+    // Zera o tempo e toca o som a cada clique
+    audioSorteio.currentTime = 0; 
+    audioSorteio.play().catch(() => {});
+
     const resultadoDiv = document.getElementById('resultado-sorteio');
     const botao = document.getElementById('btn-sorteio');
     
@@ -241,6 +249,7 @@ const playlist = [
     { titulo: "Velha Infância - Tribalistas", src: "assets/velha.mp3" },
     { titulo: "333 - Matuê", src: "assets/333.mp3" }
 ];
+
 
 let indiceMusica = 0;
 const audioFundo = new Audio();
@@ -367,7 +376,7 @@ document.addEventListener("mousemove", function(e) {
 // =========================================
 
 const audioTeclado = new Audio('assets/teclado.mp3');
-audioTeclado.volume = 0.4; 
+audioTeclado.volume = 1; 
 
 let digitouEntrada = false;
 let digitouCarta = false;

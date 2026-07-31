@@ -515,3 +515,65 @@ body {
 .btn-fechar-poema:hover {
     transform: scale(1.2);
 }
+
+.layout-lado-a-lado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 95%;
+    max-width: 1000px; /* Evita que fique muito esticado em telas ultrawide */
+}
+
+.bloco-raspadinha {
+    flex: 1.2; /* A raspadinha toma um pouco mais de espaço visual */
+    display: flex;
+    justify-content: center;
+}
+
+.bloco-sorteio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px dashed #ffb3c6;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.08);
+    
+    /* NOVA REGRA: Trava a altura da caixa inteira */
+    height: 400px; 
+    box-sizing: border-box;
+}
+
+.cupom-sorteio {
+    margin-top: 25px;
+    background: #fff;
+    border: 3px dashed #ffb3c6;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Caveat', cursive;
+    /* Reduzi um pouquinho a fonte para as frases gigantes caberem bem */
+    font-size: 1.8rem; 
+    color: #d94c7a;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* NOVAS REGRAS: Trava o tamanho do cupom */
+    width: 100%;
+    max-width: 280px;
+    height: 140px; /* Garante espaço suficiente para as 3 linhas da maior frase */
+    
+    /* Centraliza o texto independentemente de ser 1 ou 3 linhas */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    box-sizing: border-box;
+}

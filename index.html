@@ -89,27 +89,35 @@
         </div>
 
         <!-- PÁGINA 5 (Antiga Cena 4 - Raspadinha) -->
-        <div class="cena" id="scene4" style="display: flex; flex-direction: column; align-items: center;">            
-            <h1 id="texto-vitoria" class="cursor-pisca" style="font-size: 3rem; color: #d94c7a; margin-bottom: 25px; text-align: center; min-height: 55px;"></h1>            
-            <div class="container-raspadinha">
-                <div class="carta-final-container">
-                    <p>Eu amo como as nossas mãos sempre se encontram</p>
-                    <p>Saudades dos seus cabelos, do seu beijo, da sua risada, das suas gracinhas, da sua peeeele macia e do seu olhar apaixonaaaante.</p>
-                    <p>Quero que você sempre adormeça com o meu boa noite e sabendo que você é a mais amada, a mais desejada e a mais preciosa pra mim!</p>
-                    <p>Estou com muuuitas saudades, gatinha, você é o melhor presente que a vida me deu!</p>
-                    <p>Eu te amo, e a Benedita também!!</p>
-                    
-                    <p class="assinatura-final">Te amo muito! Ass: GABRIEL</p>
-                </div>
-                <canvas id="raspadinha"></canvas>
-            </div>
+        <div class="cena" id="scene4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2vh 0;">            
+            <h1 id="texto-vitoria" class="cursor-pisca" style="font-size: 2.5rem; color: #d94c7a; margin-bottom: 10px; text-align: center; min-height: 45px;"></h1>            
             
-            <button id="btn-sorteio" class="btn-comecar" onclick="sortearPremio()" style="margin-top: 40px; font-size: 1.5rem;">
-                Clique aqui para sortear seu prêmio 🎁
-            </button>
+            <div class="layout-lado-a-lado">
+                <!-- LADO ESQUERDO (Raspadinha) -->
+                <div class="bloco-raspadinha">
+                    <div class="container-raspadinha">
+                        <div class="carta-final-container">
+                            <p>Eu amo como as nossas mãos sempre se encontram</p>
+                            <p>Saudades dos seus cabelos, do seu beijo, da sua risada, das suas gracinhas, da sua peeeele macia e do seu olhar apaixonaaaante.</p>
+                            <p>Quero que você sempre adormeça com o meu boa noite e sabendo que você é a mais amada, a mais desejada e a mais preciosa pra mim!</p>
+                            <p>Estou com muuuitas saudades, gatinha, você é o melhor presente que a vida me deu!</p>
+                            <p>Eu te amo, e a Benedita também!!</p>
+                            <p class="assinatura-final">Te amo muito! Ass: GABRIEL</p>
+                        </div>
+                        <canvas id="raspadinha"></canvas>
+                    </div>
+                </div>
 
-            <div id="resultado-sorteio" class="cupom-sorteio"></div>
-
+                <!-- LADO DIREITO (Sorteio) -->
+                <div class="bloco-sorteio">
+                    <span style="font-size: 3rem; margin-bottom: 10px;"></span>
+                    <h2 style="font-size: 1.8rem; margin: 0 0 15px 0; color: #d94c7a;">Retire seu presente!!</h2>
+                    <button id="btn-sorteio" class="btn-comecar" onclick="sortearPremio()" style="margin-top: 0; font-size: 1.3rem;">
+                        Sortear 🎁
+                    </button>
+                    <div id="resultado-sorteio" class="cupom-sorteio"></div>
+                </div>
+            </div>
         </div>
     </div> <!-- Fim do Flipbook -->
 
